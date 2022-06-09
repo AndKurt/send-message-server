@@ -31,11 +31,11 @@ app.use('/api/users', usersRoute);
 const server = app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
 const io = socket(server, {
-  //cors: {
-  //  origin: 'http://localhost:3000',
-  //  credentials: true,
-  //  path: '/socket.io-client',
-  //},
+  cors: {
+    origin: '*:*',
+    credentials: true,
+    path: '/socket.io-client',
+  },
 });
 
 const onlineUser = new Map();
