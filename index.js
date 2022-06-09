@@ -32,7 +32,7 @@ const server = app.listen(PORT, () => console.log(`Server running on port: ${POR
 
 const io = socket(server, {
   cors: {
-    origin: '*',
+    origin: 'https://bright-speculoos-5c6726.netlify.app',
     credentials: true,
     path: '/socket.io-client',
   },
