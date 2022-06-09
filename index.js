@@ -34,7 +34,7 @@ const io = socket(server, {
   cors: {
     origin: '*',
     credentials: true,
-    //path: '/socket.io-client',
+    path: '/socket.io-client',
   },
 });
 
