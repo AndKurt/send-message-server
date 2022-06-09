@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
     posts.forEach((post) =>
       data.push({
         id: post._id,
-        savedPost: post.title,
+        title: post.title,
         recepient: post.recepient,
         sender: post.sender,
         message: post.message,
