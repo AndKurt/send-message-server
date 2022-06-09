@@ -32,7 +32,7 @@ const server = app.listen(PORT, () => console.log(`Server running on port: ${POR
 
 const io = socket(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://spontaneous-dasik-8b09b3.netlify.app/',
     credentials: true,
     path: '/socket.io-client',
   },
