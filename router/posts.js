@@ -24,7 +24,17 @@ router.get('/', async (req, res) => {
   try {
     const activeUser = await User.findOne({ name: req.body.activeUser });
     const posts = await Post.find({ recepient: activeUser.name });
-    res.status(200).json(posts);
+    const data = [];
+    posts.forEach((post) =>
+      data.push({
+        id: post._id,
+        savedPost: post.title,
+        recepient: post.recepient,
+        sender: post.sender,
+        message: post.message,
+      })
+    );
+    res.status(200).json(data);
   } catch (err) {
     res.status(500).json(err);
   }
