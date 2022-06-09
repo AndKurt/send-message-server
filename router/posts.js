@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
 //get all posts for active user
 router.get('/', async (req, res) => {
   try {
-    const activeUser = await User.findOne({ name: req.body.activeUser });
+    const activeUser = await User.findOne({ name: req.query.activeUser });
     const posts = await Post.find({ recepient: activeUser.name });
     const data = [];
     posts.forEach((post) =>
