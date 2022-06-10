@@ -32,7 +32,7 @@ const server = app.listen(PORT, () => console.log(`Server running on port: ${POR
 
 const io = socket(server, {
   cors: {
-    origin: 'https://tiny-narwhal-fba315.netlify.app/',
+    origin: 'https://tiny-narwhal-fba315.netlify.app/image.png',
     credentials: true,
     path: '/socket.io-client',
   },
