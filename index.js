@@ -8,7 +8,7 @@ const socket = require('socket.io');
 //const server = require('http').Server(app);
 //const io = require('socket.io')(server);
 
-const PORT = process.env.PORT || 3644;
+const PORT = process.env.PORT || 80;
 
 // import Routes
 const authRoute = require('./router/auth');
@@ -24,9 +24,16 @@ mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/auth', authRoute);
-app.use('/api/posts', postRoute);
-app.use('/api/users', usersRoute);
+app.use('/auth', authRoute);
+app.use('/posts', postRoute);
+app.use('/users', usersRoute);
+
+//----------------
+app.get('/', (req, res) => {
+  res.write(`<h1>${PORT}</h1>`);
+  res.end();
+});
+//----------------
 
 const server = app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
