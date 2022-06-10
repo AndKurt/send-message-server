@@ -8,7 +8,7 @@ const socket = require('socket.io');
 //const server = require('http').Server(app);
 //const io = require('socket.io')(server);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 80;
 
 // import Routes
 const authRoute = require('./router/auth');
