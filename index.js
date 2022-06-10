@@ -28,18 +28,11 @@ app.use('/auth', authRoute);
 app.use('/posts', postRoute);
 app.use('/users', usersRoute);
 
-//----------------
-app.get('/', (req, res) => {
-  res.write(`<h1>${PORT}</h1>`);
-  res.end();
-});
-//----------------
-
 const server = app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
 const io = socket(server, {
   cors: {
-    origin: 'https://bright-speculoos-5c6726.netlify.app',
+    origin: 'https://tiny-narwhal-fba315.netlify.app/',
     credentials: true,
     path: '/socket.io-client',
   },
